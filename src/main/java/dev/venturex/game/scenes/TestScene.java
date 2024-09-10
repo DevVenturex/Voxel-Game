@@ -2,35 +2,44 @@ package dev.venturex.game.scenes;
 
 import dev.venturex.game.ecs.MeshComponent;
 import dev.venturex.game.events.Event;
-import dev.venturex.game.events.handlers.FramebufferCallbackHandler;
-import dev.venturex.game.events.handlers.KeyCallbackHandler;
-import dev.venturex.game.events.handlers.MouseCallbackHandler;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import static org.lwjgl.glfw.GLFW.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestScene extends Scene {
 
-    private MeshComponent cmp;
+    private List<MeshComponent> blocks;
 
     public TestScene() {
     }
 
     @Override
     public void init() {
-        cmp = new MeshComponent(this);
-        cmp.init();
+        this.blocks = new ArrayList<>();
 
-        cmp.setPosition(new Vector3f(0,0,-3));
+        for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 4; x++) {
+                for (int z = 0; z < 4; z++) {
+                    MeshComponent meshComponent = new MeshComponent(this);
+                    meshComponent.init();
+                    meshComponent.setPosition(new Vector3f(x, y, z));
+                    blocks.add(meshComponent);
+                }
+            }
+        }
     }
 
     Vector2f displayVec = new Vector2f();
 
     @Override
     public void update() {
-        cmp.update();
         defaultCamera.update();
+
+        for (MeshComponent block : blocks) {
+            block.update();
+        }
     }
 
     @Override
@@ -40,7 +49,9 @@ public class TestScene extends Scene {
 
     @Override
     public void render() {
-        cmp.render();
+        for (MeshComponent block : blocks) {
+            block.render();
+        }
     }
 
     @Override

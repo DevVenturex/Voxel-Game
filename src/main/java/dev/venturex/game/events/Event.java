@@ -1,21 +1,4 @@
 package dev.venturex.game.events;
 
 public class Event {
-
-    enum EventType {
-        NONE,
-        WINDOW_CLOSE, WINDOW_RESIZE, WINDOW_FOCUS, WINDOW_LOST_FOCUS, WINDOW_MOVED,
-        GAME_TICK, GAME_UPDATE, GAME_RENDER,
-        KEY_PRESSED, KEY_RELEASED,
-        MOUSE_BUTTON_PRESSED, MOUSE_BUTTON_RELEASED, MOUSE_MOVED, MOUSE_SCROLLED
-    }
-
-    enum EventCategory {
-        NONE,
-        EVENT_CATEGORY_GAME,
-        EVENT_CATEGORY_INPUT,
-        EVENT_CATEGORY_KEYBOARD,
-        EVENT_CATEGORY_MOUSE,
-        EVENT_CATEGORY_MOUSE_BUTTON
-    }
 }

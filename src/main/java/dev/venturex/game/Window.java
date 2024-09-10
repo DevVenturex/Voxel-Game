@@ -1,12 +1,9 @@
 package dev.venturex.game;
 
-import dev.venturex.game.events.handlers.FramebufferCallbackHandler;
 import dev.venturex.game.events.handlers.KeyCallbackHandler;
 import dev.venturex.game.events.handlers.MouseCallbackHandler;
 import dev.venturex.game.graphics.Graphics;
 import org.lwjgl.glfw.GLFWErrorCallback;
-import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
-import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryUtil;
 import org.tinylog.Logger;

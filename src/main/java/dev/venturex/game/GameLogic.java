@@ -31,6 +31,7 @@ public class GameLogic implements IGameLogic {
     @Override
     public void update() {
         while (!window.shouldClose()) {
+            glClearColor(0f, 0.5f, 1.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             gameScene.update();

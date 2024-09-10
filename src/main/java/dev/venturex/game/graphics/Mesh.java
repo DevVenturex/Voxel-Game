@@ -4,6 +4,8 @@ import org.lwjgl.system.MemoryUtil;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
 import static org.lwjgl.opengl.GL15.*;
@@ -74,5 +76,9 @@ public class Mesh {
         glDeleteBuffers(eboId);
         glDeleteBuffers(vboId);
         glDeleteVertexArrays(vaoId);
+    }
+
+    public List<Vertex> getVertices() {
+        return new ArrayList<>();
     }
 }
